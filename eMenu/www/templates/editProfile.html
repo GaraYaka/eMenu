@@ -2,7 +2,7 @@
   <ion-nav-buttons side="right">
       <button class="button button-outline button-assertive">Edit</button>
   </ion-nav-buttons>
-    <ion-content overflow-scroll="true" padding="true" class="has-header">
+    <ion-content overflow-scroll="true" padding="true" class="has-header" ng-controller="editProfileCtrl">
 
         <form class="list">
             <ion-item class="item-divider">Login &amp; General Information</ion-item>
@@ -32,8 +32,8 @@
             </label>
         </form>
         <div class="button-bar">
-            <button class="button button-stable button-block  icon-left ion-android-create">Edit</button>
-            <button class="button button-stable button-block  icon-left ion-android-done">Save</button>
+            <button class="button button-outline button-balanced  icon-left ion-android-create" hidden="hidden" id="btnepEdit">Edit</button>
+            <button class="button button-outline button-balanced  icon-left ion-android-create">Save</button>
         </div>
     </ion-content>
 </ion-view>
