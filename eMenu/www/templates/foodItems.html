@@ -1,0 +1,20 @@
+<ion-view title="Food Items">
+ 
+
+    <ion-content overflow-scroll="true" padding="true" class="has-header" ng-controller="menuListCtrl">
+<label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="search" placeholder="">
+            </label>
+        <ion-list ng-repeat="foodItem in foodItems">
+            
+            <ion-item class="item item-thumbnail-left">
+                <img>
+                <h2>{{foodItem.name}}</h2>
+                <p>{{foodItem.ID}}</p>
+                <p>Category ID = {{foodItem.Catid}}</p>
+            </ion-item>
+            
+        </ion-list>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,32 @@
+<ion-view title="name" >
+
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+    
+
+
+
+<div ng-controller="hotDishesCtrl">
+
+
+<ion-list>
+
+                <ion-list ng-repeat="hotdish in hotdishes">
+            
+            <ion-item class="item item-thumbnail-left" ui-sref="menu.hotDishView">
+                <img src="{{hotdish.img}}">
+                <h2>{{hotdish.Id}}</h2>
+                <p>{{hotdish.name}}</p>
+            </ion-item>
+
+
+            
+        </ion-list>
+
+
+
+
+
+
+    
+		</ion-content>
+</ion-view>

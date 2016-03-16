@@ -6596,6 +6596,9 @@ button.item.item-button-right {
  * --------------------------------------------------
  */
 .list {
+  border-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+  color: white; 
   position: relative;
   padding-top: 1px;
   padding-bottom: 1px;

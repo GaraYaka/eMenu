@@ -1,15 +1,15 @@
 <ion-view title="Signup">
-    <ion-content overflow-scroll="true" padding="true" scroll="false" class="has-header">
+    <ion-content overflow-scroll="true" padding="true" scroll="false" class="has-header" ng-controller="signupCtrl">
         <form class="list">
             <ion-list>
                 <label class="item item-input">
-                    <input type="text" placeholder="Name">
+                    <input type="text" placeholder="Name" ng-modal="name">
                 </label>
                 <label class="item item-input">
-                    <input type="text" placeholder="Phone Number">
+                    <input id="mobile" type="text" placeholder="Phone Number" ng-modal="mobile">
                 </label>
             </ion-list>
-            <button class="button button-assertive button-block ">Sign up</button>
+            <button class="button button-assertive button-block " ng-click="{{AddUser(name,mobile)}}">Sign up</button>
         </form>
     </ion-content>
 </ion-view>

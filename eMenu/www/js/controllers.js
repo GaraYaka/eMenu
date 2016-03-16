@@ -8,11 +8,23 @@ angular.module('app.controllers', [])
 
 })
    
-.controller('hotDishesCtrl', function($scope) {
+.controller('hotDishesCtrl', function($scope, $http) {
+
+			$http.post('http://52.36.8.68/services/soapService.asmx/getAllDishToAPP')
+            .then(function (response){
+            $scope.hotdishes = response.data;
+              
+      });
 
 })
       
-.controller('menuListCtrl', function($scope) {
+.controller('menuListCtrl', function($scope, $http) {
+
+	        $http.post('http://52.36.8.68/services/soapService.asmx/getTest')
+            .then(function (response){
+            $scope.employees = response.data;
+              
+      });
 
 })
    
@@ -39,8 +51,13 @@ angular.module('app.controllers', [])
 .controller('login2Ctrl', function($scope) {
 
 })
-   
-.controller('signupCtrl', function($scope) {
+ 
+
+.controller('signupCtrl', function($scope, $http ) {
+
+
+
+
 
 })
    
@@ -57,5 +74,15 @@ angular.module('app.controllers', [])
 })
 
 .controller('pastOrdersCtrl', function($scope) {
+
+})
+
+.controller('foodItemCtrl', function($scope, $http) {
+
+	        $http.post('http://localhost:1047/services/soapservice.asmx/GetFoodAllToApp')
+            .then(function (response){
+            $scope.foodItems = response.data;
+              
+      });
 
 })

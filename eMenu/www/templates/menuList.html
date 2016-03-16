@@ -1,23 +1,21 @@
-<ion-view title="Menu List">
+<ion-view title="Categories">
   <ion-nav-buttons side="right">
       <button class="button button-assertive ion-android-cart"></button>
   </ion-nav-buttons>
-    <ion-content overflow-scroll="true" padding="true" class="has-header">
-        <ion-list>
-            <label class="item item-input">
+
+    <ion-content overflow-scroll="true" padding="true" class="has-header" ng-controller="menuListCtrl">
+<label class="item item-input">
                 <i class="icon ion-search placeholder-icon"></i>
                 <input type="search" placeholder="">
             </label>
-            <ion-item class="item-thumbnail-left">
+        <ion-list ng-repeat="employee in employees">
+            
+            <ion-item class="item item-thumbnail-left" href="#/side-menu21/page4/{{employee.Catid}}">
                 <img>
-                <h2>Title</h2>
-                <p>Item</p>
+                <h2>{{employee.Catid}}</h2>
+                <p>{{employee.itemname}}</p>
             </ion-item>
-            <ion-item class="item-thumbnail-left">
-                <img>
-                <h2>Title</h2>
-                <p>Item</p>
-            </ion-item>
+            
         </ion-list>
     </ion-content>
 </ion-view>

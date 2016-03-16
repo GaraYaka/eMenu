@@ -154,6 +154,26 @@ angular.module('app.routes', [])
     }
   })   
 
+      .state('menu.hotDishView', {
+    url: '/page16',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/hotDishView.html',
+        controller: 'hotDishesCtrl'
+      }
+    }
+  })  
+
+      .state('menu.foodItems', {
+        url: '/page4/:Catid',
+        views: {
+          'side-menu21': {
+        templateUrl: 'templates/foodItems.html',
+        controller: 'foodItemCtrl'
+             }
+           }
+  })
+
 $urlRouterProvider.otherwise('/side-menu21/page1')
 
   

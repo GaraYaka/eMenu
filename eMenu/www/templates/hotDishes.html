@@ -1,10 +1,25 @@
 <ion-view title="Hot Dishes">
-    <ion-content overflow-scroll="true" padding="true" class="has-header">
+    <ion-content overflow-scroll="true" padding="true" class="has-header" ng-controller="hotDishesCtrl">
         <form class="list">
             <label class="item item-input">
                 <i class="icon ion-search placeholder-icon"></i>
                 <input type="search" placeholder="">
-            </label>
+</label>
+
+                <ion-list ng-repeat="hotdish in hotdishes">
+            
+            <ion-item class="item item-thumbnail-left" ui-sref="menu.hotDishView">
+                <img src="{{hotdish.img}}">
+                <h2>{{hotdish.Id}}</h2>
+                <p>{{hotdish.name}}</p>
+            </ion-item>
+
+
+            
+        </ion-list>
+
+            
+            
         </form>
     </ion-content>
 </ion-view>
