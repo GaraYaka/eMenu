@@ -1,24 +1,30 @@
 <ion-view title="Feedback">
-    <ion-content overflow-scroll="true" padding="true" class="has-header">
+    <ion-content overflow-scroll="true" padding="true" class="has-header" ng-controller="feedbackCtrl">
         <div>
             <div class="card"><div class="item item-text-wrap"><p>Your feedback is important to us, please send us any complaints, suggestions and ideas you have that could help us improve</p></div></div>
         </div>
         <div class="spacer" style="width: 283px; height: 3px;"></div>
-        <form class="list">
+        <form class="list" name="myForm" novalidate>
             <label class="item item-select">
                 <span class="input-label">Select Option</span>
-                <select>
-                    <option>Order inquiry</option>
-                    <option>Complaints</option>
-                    <option>Appreciation</option>
-                    <option>Suggestion</option>
+                <select id="feedbacktype" name='feedbacktype' ng-model="feedtype" ng-change="getselectvalue()">
+                    <option value="Order inquiry">Order inquiry</option>
+                    <option value="Complaints">Complaints</option>
+                    <option value="Appreciation">Appreciation</option>
+                    <option value="Suggestion">Suggestion</option>
                 </select>
             </label>
             <label class="item item-input">
-                <input type="text" placeholder="Enter feedback here"z>
+                <input type="text" name="feedbackMsg" placeholder="Enter feedback here" ng-model="feedback" ng-minlength="50" required>
             </label>
         </form>
-        <button class="button button-assertive button-block button-outline icon-right ion-android-checkbox-outline">Submit feedback</button>
+    <button class="button button-assertive button-block button-outline icon-right ion-android-checkbox-outline" ng-click="addfeedback(feedback)" ng-disabled="myForm.$invalid">Submit feedback</button>
         <form class="list"></form>
+         <div class="list">
+            <p ng-show="myForm.feedbackMsg.$error.required">* Feedback message is required</p>
+          
+            <p ng-show="myForm.feedbackMsg.$error.minlength">* Please type at least 50 characters</p>
+            
+        </div>
     </ion-content>
 </ion-view>

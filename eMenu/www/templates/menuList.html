@@ -1,7 +1,5 @@
 <ion-view title="Categories">
-  <ion-nav-buttons side="right">
-      <button class="button button-assertive ion-android-cart"></button>
-  </ion-nav-buttons>
+ 
 
     <ion-content overflow-scroll="true" padding="true" class="has-header" ng-controller="menuListCtrl">
 <label class="item item-input">
@@ -11,9 +9,9 @@
         <ion-list ng-repeat="employee in employees">
             
             <ion-item class="item item-thumbnail-left" href="#/side-menu21/page4/{{employee.Catid}}">
-                <img>
-                <h2>{{employee.Catid}}</h2>
-                <p>{{employee.itemname}}</p>
+                <img src="{{employee.CatImg}}">
+                <h2>{{employee.itemname}}</h2>
+                <p></p>
             </ion-item>
             
         </ion-list>

@@ -1,0 +1,69 @@
+<ion-view title="Submarine">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+<div ng-controller="submarineCtrl">    
+    <form class="list">
+	<div>
+            <label class="item item-select">
+                <span class="input-label">Size</span>
+                <select id="size" name='size' ng-model="datasize" ng-change="getselectvalue()">
+                  <option value="Regular-Submarineq100">Regular-Submarine - Rs : 100</option>
+                  <option value="Large-Submarineq200">Large-Submarine - Rs : 200</option>
+                </select>
+            </label>
+            <label class="item item-select">
+                <span class="input-label">Topping 1</span>
+                <select id="toppp1" name='toppp1'  ng-model="datatop1" ng-change="getselectvalue1()">
+                <option value="Cheeseq20">Cheese - Rs : 20</option>
+                <option value="Mashroomsq30">Mayonnaise - Rs : 30</option>
+                <option value="Mashroomsq35">Mushrooms - Rs : 35</option>
+                <option value="Jamq20">Jam - Rs : 20</option>
+                </select>
+            </label>
+            <label class="item item-select">
+                <span class="input-label">Topping 2</span>
+               <select id="toppp2" name="toppp2"  ng-model="datatop2" ng-change="getselectvalue2()">
+					<option value="Hamq40">Ham - Rs : 40</option>
+					<option value="Chickenq60">Chicken - Rs : 60</option>
+					<option value="Sausageq65">Sausage - Rs : 65</option>
+					<option value="Meatballsq70">Meatballs - Rs : 70</option>
+
+                </select>
+            </label>
+			
+			 <label class="item item-select">
+                <span class="input-label">Extra Add</span>
+                <select id="extraaa" name="extra"  ng-model="dataextra" ng-change="getselectvalue3()">
+                   <option value="Cheeseq20">Cheese - Rs : 20</option>
+                   <option value="Mayonnaiseq30">Mayonnaise - Rs : 30</option>
+                </select>
+            </label>
+			
+			<label class="item item-select">
+                <span class="input-label">Quantitiy</span>
+                <select id="quantitiy" name="quantitiy"  ng-model="dataextra4" ng-change="getselectvalue4()">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>                
+                </select>
+            </label>
+            <div class="list">
+            <label class="item item-input">
+            <span class="input-label" style="font-size:30px ;color:red">Total Price</span>
+            <input type="text" id="iddof" style="font-size:20px;color:red" ng-model="tot">
+            </label>
+			
+
+			<br>
+			</div>
+<div>
+        <a ui-sref="menu.submarineDetails" id="submarine-button5" class="button button-assertive  button-outline">View Order</a>
+        <button id="submarine-button2" class="button button-assertive  button-outline" ng-click="submit(datasize,datatop1,datatop2,dataextra,dataextra4)" >Add to Cart</button>
+		</div>
+		</form>
+		</div>  
+		
+  </ion-content>
+</ion-view>

@@ -1,4 +1,21 @@
 <ion-view title="Hot Dishes">
+
+<ion-nav-buttons side="right" >
+        
+      <div ng-controller="getDetail">
+
+     <input hidden id="MobileID" ng-model="umobile"{{umobile}}>
+
+    <input hidden id="getDate" ng-model="date | date:'yyyy-MM-dd'"{{date | date:'yyyy-MM-dd'}}>
+     <input hidden id="TBLid" ng-model="tableid" value="2">
+     
+
+      <button class="button button-assertive ion-android-cart"></button>
+     </div>
+  </ion-nav-buttons>
+
+
+
     <ion-content overflow-scroll="true" padding="true" class="has-header" ng-controller="hotDishesCtrl">
         <form class="list">
             <label class="item item-input">
@@ -8,10 +25,14 @@
 
                 <ion-list ng-repeat="hotdish in hotdishes">
             
-            <ion-item class="item item-thumbnail-left" ui-sref="menu.hotDishView">
+            <ion-item class="item item-thumbnail-left">
                 <img src="{{hotdish.img}}">
-                <h2>{{hotdish.Id}}</h2>
-                <p>{{hotdish.name}}</p>
+                <h2>{{hotdish.name}}</h2>
+                <p>{{hotdish.price}} LKR</p>
+                <div class="item-icon-right">
+                 <!-- <i class="icon ion-ios-cart" ng-click="addorder({{food.name}},date, tableid, umobile)"><h3>Order</h3></i> -->
+                 <button class="button button-assertive ion-android-cart" ng-click="addorder(hotdish.name)"></button>
+                 </div>
             </ion-item>
 
 

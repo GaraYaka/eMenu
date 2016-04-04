@@ -119,7 +119,7 @@ angular.module('app.routes', [])
     views: {
       'side-menu21': {
         templateUrl: 'templates/editProfile.html',
-        controller: 'editProfileCtrl'
+        controller: 'getDetail'
       }
     }
   })
@@ -129,7 +129,7 @@ angular.module('app.routes', [])
     views: {
       'side-menu21': {
         templateUrl: 'templates/myAccount.html',
-        controller: 'myAccountCtrl'
+        controller: 'getDetail'
       }
     }
   })
@@ -149,7 +149,7 @@ angular.module('app.routes', [])
     views: {
       'side-menu21': {
         templateUrl: 'templates/pastOrders.html',
-        controller: 'pastOrdersCtrl'
+        controller: 'pastOrders'
       }
     }
   })   
@@ -173,6 +173,68 @@ angular.module('app.routes', [])
              }
            }
   })
+
+
+     .state('menu.pizza', {
+    url: '/page17',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/pizza.html',
+        controller: 'pizzaCtrl'
+      }
+    }
+  })  
+
+    .state('menu.submarine', {
+    url: '/page18',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/submarine.html',
+        controller: 'submarineCtrl'
+      }
+    }
+  })  
+ 
+      .state('menu.pasta', {
+    url: '/page19',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/pasta.html',
+        controller: 'pastaCtrl'
+      }
+    }
+  })  
+
+      .state('menu.pizzaDetails', {
+    url: '/page20',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/pizzaDetails.html',
+        controller: 'pizzaCtrl'
+      }
+    }
+  }) 
+
+      .state('menu.pastaDetails', {
+    url: '/page21',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/pastaDetails.html',
+        controller: 'pastaCtrl'
+      }
+    }
+  }) 
+
+        .state('menu.submarineDetails', {
+    url: '/page22',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/submarineDetails.html',
+        controller: 'submarineCtrl'
+      }
+    }
+  }) 
+
 
 $urlRouterProvider.otherwise('/side-menu21/page1')
 

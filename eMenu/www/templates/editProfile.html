@@ -1,39 +1,39 @@
 <ion-view title="Edit Profile">
-  <ion-nav-buttons side="right">
-      <button class="button button-assertive button-outline">Edit</button>
+  <ion-nav-buttons side="right" ng-controller="getDetail">
+  
+    <button class="button button-assertive button-outline" ng-click="getD({{umobile}})">Edit</button>
   </ion-nav-buttons>
-    <ion-content overflow-scroll="true" padding="true" class="has-header" ng-controller="editProfileCtrl">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
 
         <form class="list">
             <ion-item class="item-divider">Login &amp; General Information</ion-item>
             <label class="item item-input">
-                <input type="text" placeholder="First Name">
+                <input id="fname" type="text" placeholder="First Name" ng-model="unamep" >
             </label>
             <label class="item item-input">
-                <input type="text" placeholder="Last Name">
+                <input type="text" placeholder="Last Name" ng-model="lname" >
             </label>
             <label class="item item-input">
-                <input type="tel" placeholder="Phone Number">
+                <input type="tel" placeholder="Phone Number" ng-model="umobile" ng-readonly="true">
             </label>
             <ion-item class="item-divider">Optional Information</ion-item>
             <label class="item item-select">
                 <span class="input-label">Gender</span>
-                <select>
-                    <option>Male</option>
-                    <option>Female</option>
-                    <option>Select</option>
+                <select id="gender" name='feedbacktype' ng-model="gender" ng-change="getselectvalue()">
+                    <option >Male</option>
+                    <option >Female</option>
                 </select>
             </label>
             <label class="item item-input">
-                <input type="email" placeholder="E-Mail">
+                <input type="email" placeholder="E-Mail" ng-model="email">
             </label>
             <label class="item item-input">
-                <input type="text" placeholder="Location">
+                <input type="text" placeholder="Location" ng-model="locationt">
             </label>
         </form>
-        <div class="button-bar">
+        <div class="button-bar" >
             <button class="button button-outline button-assertive  icon-left ion-close-round" hidden="hidden" id="btnepEdit">Cancel</button>
-            <button class="button button-outline button-assertive  icon-left ion-checkmark-round">Save</button>
+            <button class="button button-outline button-assertive  icon-left ion-checkmark-round" ng-click="save(uname,lname, umobile, email, locationt)">Save</button>
         </div>
     </ion-content>
 </ion-view>

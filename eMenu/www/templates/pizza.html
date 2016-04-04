@@ -1,0 +1,77 @@
+<ion-view title="Pizza">
+
+
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+	<div ng-controller="pizzaCtrl">
+     <form action="" id="cakeform" class="list" onsubmit="return false;">
+		
+		<div>
+            <label class="item item-select">
+                <span class="input-label">Size</span>
+                <select   id="size" name='size' ng-model="datasize" ng-change="getselectvalue()">
+                    <option value="Small-Pizzaq150">Small-Pizza - Rs : 150</option>
+                    <option value="Medium-Pizzaq500">Medium-Pizza - Rs : 500</option>
+                    <option value="Large-Pizzaq850">Large-Pizza - Rs : 850</option>
+
+                </select>
+            </label>
+            <label class="item item-select">
+                <span class="input-label">Topping 1</span>
+                <select  id="toppp1" name='toppp1'  ng-model="datatop1" ng-change="getselectvalue1()">
+                    <option value="Cheeseq60">Cheese - Rs : 60</option>
+                    <option value="Mayonnaiseq80">Mayonnaise - Rs : 80</option>
+                    <option value="Mushroomq30">Mushroom - Rs : 30</option>
+                    <option value="Tomatoq20">Tomato- Rs : 20</option>
+
+                </select>
+            </label>
+             <label class="item item-select">
+                <span class="input-label">Topping 2</span>
+                <select id="toppp2" name="toppp2"  ng-model="datatop2" ng-change="getselectvalue2()">
+                    <option value="Chickenq200">Chicken - Rs : 200</option>
+                    <option value="Hamq100">Ham - Rs : 100</option>
+                    <option value="Beefq300">Beef - Rs : 300</option>
+                    <option value="Sausagesq150">Sausages - Rs : 150</option>
+                    <option value="Pepperoniq250">Pepperoni - Rs : 250</option>
+
+                </select>
+            </label>
+
+            <label class="item item-select">
+                <span class="input-label">Extra Add</span>
+                <select id="extraaa" name="extra"  ng-model="dataextra" ng-change="getselectvalue3()">
+				<option value="Cheeseq80">Cheese - Rs : 80</option>
+				<option value="Mayonnaiseq90">Mayonnaise - Rs : 90</option>
+                </select>
+            </label>
+			
+
+            <label class="item item-select">
+                <span class="input-label">Quantitiy</span>
+                <select id="quantitiy" name="quantitiy"  ng-model="dataextra4" ng-change="getselectvalue4()">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>                
+                </select>
+            </label>
+            <div class="list">
+            <label class="item item-input">
+            <span class="input-label" style="font-size:30px ;color:red">Total Price</span>
+            <input type="text" id="iddof" style="font-size:20px;color:red" ng-model="tot">
+            </label>
+				</div>
+
+			<br>
+			</div>
+<div>
+        <a ui-sref="menu.pizzaDetails" id="pizza-button4" class="button button-assertive  button-outline">View Order</a>
+        <!-- <input id='submit' class="button button-assertive  button-outline"  ng-click="adddata()" value="Add to Cart"/> -->
+		<button id='submit' class="button button-assertive  button-outline"  ng-click="submit(datasize,datatop1,datatop2,dataextra,dataextra4)" >Add to Cart</button>
+		</div>  		
+		</form>
+		</div>
+    </ion-content>
+</ion-view>

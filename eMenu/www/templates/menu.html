@@ -6,37 +6,48 @@
                 <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
             </ion-nav-buttons>
         </ion-nav-bar>
+
         <ion-nav-view name="side-menu21"></ion-nav-view>
     </ion-side-menu-content>
     <ion-side-menu side="left">
-        <ion-header-bar class="bar-assertive">
-            <div class="title">Menu</div>
+        <ion-header-bar class="bar-dark">
+            <div class="title"></div>
         </ion-header-bar>
-        <ion-content padding="false" class="side-menu-left has-header">
-            <ion-list>
+        <img src="http://i.imgur.com/FbNGuhG.jpg" height="200" width="300">
+        <ion-content padding="false" class="side-menu-left has-header" ng-controller="getDetail">
+        <br><br><br><br><br>
+            <div class="list card">
+            <div class="list card">
                 <ion-item ui-sref="menu.home" menu-close="">Home</ion-item>
-                <ion-item ui-sref="menu.login2" menu-close="">Login</ion-item>           
-                <ion-item ui-sref="menu.hotDishes" menu-close="">Hot Dishes</ion-item>
+                <ion-item ui-sref="menu.login2" menu-close="" ng-show="listshow" >Login</ion-item>           
+                <ion-item ui-sref="menu.hotDishes" menu-close="" ng-show="hotDishshow">Hot Dishes</ion-item>
                 <ion-item ui-sref="menu.menuList" menu-close="">Menu List</ion-item>
                 <ion-item ui-sref="menu.customizeDishes" menu-close="">Customize Dishes</ion-item>
-                <ion-item ui-sref="menu.callWaiter" menu-close="">Call Waiter</ion-item>
+                <ion-item ui-sref="menu.callWaiter" menu-close="">My Points</ion-item>
                 <ion-item ui-sref="menu.feedback" menu-close="">Feedback</ion-item>
                 <ion-item ui-sref="menu.about" menu-close="">About</ion-item>
                 
-
-           </ion-list>
+</div>
+           </div>
            <br>
            <div class="card">
-  <div class="item item-text-wrap">
+  <div class="item item-text-wrap" ng-show="Cardshow">
     
    
     
     <div class="item item-icon-right">
-     <i class="ion-android-person" style="font-size: 25px"> </i>
-    Profile Name
+     <i class="ion-android-person" style="font-size: 25px" > </i>
+     
+     <h2> <input placeholder="" type="text" ng-model="uname" value="{{name}}" ></h2>
+
     
-      <i class="icon ion-gear-b" ui-sref="menu.myAccount" menu-close=""></i>
-    
+      <i hidden class="icon ion-gear-b" ui-sref="menu.myAccount" menu-close=""></i>
+      
+    <h2> <input placeholder="" type="hidden" ng-model="ttt" value="{{text}}" hidden>
+
+    <input hidden  id="getDate" ng-model="date | date:'yyyy-MM-dd'"{{date | date:'yyyy-MM-dd'}}>
+
+    </h2>
   </div>
     
     
